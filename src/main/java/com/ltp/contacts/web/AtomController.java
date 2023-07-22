@@ -35,6 +35,14 @@ public class AtomController {
         return new ResponseEntity<>(atoms, HttpStatus.OK);
     }
 
+    @PostMapping("/atom")
+    public ResponseEntity<HttpStatus> createAtom(@RequestBody Atom atom) {
+        System.out.println("------------------------");
+        System.out.println(atom);
+        atomService.saveAtom(atom);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
     // @GetMapping("/atom/{id}")
     // public ResponseEntity<Contact> getContact(@PathVariable String id) {
     //     Contact contact = contactService.getContactById(id);

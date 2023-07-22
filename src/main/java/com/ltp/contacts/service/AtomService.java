@@ -5,6 +5,7 @@ import java.util.List;
 import com.ltp.contacts.pojo.Atom;
 
 public interface AtomService {
+    void saveAtom(Atom atom);
     Atom getByKey(String key);
     List<Atom> getAtoms();
     // void saveContact(Contact contact);
