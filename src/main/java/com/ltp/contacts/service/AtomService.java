@@ -6,7 +6,11 @@ import com.ltp.contacts.pojo.Atom;
 
 public interface AtomService {
     void saveAtom(Atom atom);
-    Atom getByKey(String key);
+
+    Atom getAtomById(Long id);
+
+    void deleteAtomById(Long id);
+
     List<Atom> getAtoms();
     // void saveContact(Contact contact);
     // void updateContact(String id, Contact contact);

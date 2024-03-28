@@ -1,6 +1,8 @@
 package com.ltp.contacts.service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.IntStream;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,43 +28,18 @@ public class AtomServiceImpl implements AtomService {
     }
 
     @Override
-    public Atom getByKey(String key) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getByKey'");
+    public Atom getAtomById(Long id) {
+        return this.atomRepository.findById(id).get();
+    }
+
+    @Override
+    public void deleteAtomById(Long id) {
+        this.atomRepository.deleteById(id);
     }
 
     @Override
     public List<Atom> getAtoms() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAtoms'");
+        return (List<Atom>) this.atomRepository.findAll();
     }
-
-    // @Override
-    // public void saveContact(Contact contact) {
-    //     contactRepository.saveContact(contact);
-    // }
-
-    // @Override
-    // public void updateContact(String id, Contact contact) {
-    //     contactRepository.updateContact(findIndexById(id), contact);
-    // }
-
-    // @Override
-    // public void deleteContact(String id) {
-    //     contactRepository.deleteContact(findIndexById(id)); 
-    // }
-
-    // @Override
-    // public List<Contact> getContacts() {
-    //     return contactRepository.getContacts();
-    // }
-
-
-    // private int findIndexById(String id) {
-    //     return IntStream.range(0, contactRepository.getContacts().size())
-    //         .filter(index -> contactRepository.getContacts().get(index).getId().equals(id))
-    //         .findFirst()
-    //         .orElseThrow();
-    // }
 
 }

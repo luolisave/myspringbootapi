@@ -8,10 +8,15 @@ public class Contact {
     private String name;
     private String phoneNumber;
 
-
-    public Contact(){
+    public Contact() {
         this.id = UUID.randomUUID().toString();
-    } 
+    }
+
+    public Contact(String id, String name, String phoneNumber) {
+        this.id = id;
+        setName(name);
+        setPhoneNumber(phoneNumber);
+    }
 
     public String getName() {
         return this.name;
