@@ -27,8 +27,13 @@ public class QuarkServiceImpl implements QuarkService {
     }
 
     @Override
-    public Quark getById(Long id) {
-        return this.quarkRepository.findById(id).get();
+    public List<Quark> getAllByAtomId(Long id) {
+        return this.quarkRepository.findAllByAtomId(id);
+    }
+
+    @Override
+    public Quark getByAtomId(Long id) {
+        return this.quarkRepository.findByAtomId(id);
     }
 
     @Override

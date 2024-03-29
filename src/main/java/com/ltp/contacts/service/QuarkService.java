@@ -7,7 +7,9 @@ import com.ltp.contacts.pojo.Quark;
 public interface QuarkService {
     void save(Quark quark, Long atomId, Long quarkId);
 
-    Quark getById(Long id);
+    List<Quark> getAllByAtomId(Long id);
+
+    Quark getByAtomId(Long id);
 
     void deleteById(Long id);
 

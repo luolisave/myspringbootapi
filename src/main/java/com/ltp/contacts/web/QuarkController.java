@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ltp.contacts.pojo.Atom;
 import com.ltp.contacts.pojo.Quark;
-import com.ltp.contacts.service.AtomService;
 import com.ltp.contacts.service.QuarkService;
 
 @RestController
@@ -23,10 +22,16 @@ public class QuarkController {
     @Autowired
     private QuarkService quarkService;
 
-    @PostMapping("/atom/{id}/quark/{qid}")
-    public ResponseEntity<HttpStatus> createAtom(@RequestBody Quark quark, @PathVariable Long id,
-            @PathVariable Long qid) {
-        quarkService.save(quark, id, qid);
+    @GetMapping("/atom/{id}/quarks")
+    public ResponseEntity<List<Quark>> getAtoms(@PathVariable Long id) {
+        // Quark quark = quarkService.getByAtomId(id);
+        List<Quark> quark = quarkService.getAllByAtomId(id);
+        return new ResponseEntity<List<Quark>>(quark, HttpStatus.OK);
+    }
+
+    @PostMapping("/atom/{id}/quark")
+    public ResponseEntity<HttpStatus> createAtom(@RequestBody Quark quark, @PathVariable Long id) {
+        quarkService.save(quark, id, null);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
