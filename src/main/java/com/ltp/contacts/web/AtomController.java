@@ -9,22 +9,14 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.ltp.contacts.pojo.Contact;
-import com.ltp.contacts.service.ContactService;
 
 import com.ltp.contacts.pojo.Atom;
 import com.ltp.contacts.service.AtomService;
 
 @RestController
 public class AtomController {
-
-    @Autowired
-    private ContactService contactService;
 
     @Autowired
     private AtomService atomService;
@@ -37,7 +29,6 @@ public class AtomController {
 
     @PostMapping("/atom")
     public ResponseEntity<HttpStatus> createAtom(@RequestBody Atom atom) {
-        System.out.println("------------------------");
         atomService.saveAtom(atom);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
