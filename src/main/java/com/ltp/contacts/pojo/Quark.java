@@ -37,6 +37,7 @@ public class Quark {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "atom_id", referencedColumnName = "id", nullable = false)
-    private Atom atom;
+    private Atom atom; // Atom.java uses @OneToMany(mappedBy = "atom"), atom is the name to link both.
+                       // #ed8ei683wls
 
 }
