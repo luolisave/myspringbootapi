@@ -11,6 +11,8 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,6 +37,7 @@ public class Quark {
     @Column(name = "vvv", columnDefinition = "TEXT")
     private String vvv;
 
+    // @JsonIgnore //will not return this object in json if uncomment
     @ManyToOne(optional = false)
     @JoinColumn(name = "atom_id", referencedColumnName = "id", nullable = false)
     private Atom atom; // Atom.java uses @OneToMany(mappedBy = "atom"), atom is the name to link both.

@@ -11,6 +11,8 @@ import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import io.micrometer.core.lang.NonNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -51,6 +53,7 @@ public class Atom {
     @Column(name = "content", columnDefinition = "TEXT") // TEXT uses CHARACTER VARYING internally. 1GB max
     private String content;
 
+    @JsonIgnore // need this one to avoid infinity loop
     @OneToMany(mappedBy = "atom") // 'atom' is the property we wrote inside Quark.java file #ed8ei683wls
     private List<Quark> quarks;
 
