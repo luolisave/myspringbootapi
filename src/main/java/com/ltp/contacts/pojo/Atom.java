@@ -2,6 +2,7 @@ package com.ltp.contacts.pojo;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -54,7 +55,10 @@ public class Atom {
     private String content;
 
     @JsonIgnore // need this one to avoid infinity loop
-    @OneToMany(mappedBy = "atom") // 'atom' is the property we wrote inside Quark.java file #ed8ei683wls
+    @OneToMany(mappedBy = "atom", cascade = CascadeType.ALL) // #ed8ei683wls
+                                                             // 'atom' is the property we wrote inside Quark.java file
+                                                             // when delete, cascade will delete quark rows with the
+                                                             // same atom_id foreign key.
     private List<Quark> quarks;
 
 }
