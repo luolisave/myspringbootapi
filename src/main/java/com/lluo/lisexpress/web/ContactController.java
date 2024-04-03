@@ -1,4 +1,4 @@
-package com.ltp.contacts.web;
+package com.lluo.lisexpress.web;
 
 import java.util.List;
 
@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ltp.contacts.pojo.Contact;
-import com.ltp.contacts.service.ContactService;
+import com.lluo.lisexpress.pojo.Contact;
+import com.lluo.lisexpress.service.ContactService;
 
 @RestController
 public class ContactController {
-    
+
     @Autowired
     private ContactService contactService;
 
@@ -33,7 +33,7 @@ public class ContactController {
         Contact contact = contactService.getContactById(id);
         return new ResponseEntity<>(contact, HttpStatus.OK);
     }
-    
+
     @PostMapping("/contact")
     public ResponseEntity<HttpStatus> createContact(@RequestBody Contact contact) {
         contactService.saveContact(contact);
@@ -42,7 +42,7 @@ public class ContactController {
 
     @PutMapping("/contact/{id}")
     public ResponseEntity<Contact> updateContact(@PathVariable String id, @RequestBody Contact contact) {
-        contactService.updateContact(id, contact);   
+        contactService.updateContact(id, contact);
         return new ResponseEntity<Contact>(contactService.getContactById(id), HttpStatus.OK);
     }
 
@@ -51,6 +51,5 @@ public class ContactController {
         contactService.deleteContact(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-
 
 }

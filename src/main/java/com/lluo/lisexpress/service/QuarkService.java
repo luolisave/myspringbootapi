@@ -1,8 +1,8 @@
-package com.ltp.contacts.service;
+package com.lluo.lisexpress.service;
 
 import java.util.List;
 
-import com.ltp.contacts.pojo.Quark;
+import com.lluo.lisexpress.pojo.Quark;
 
 public interface QuarkService {
     void save(Quark quark, Long atomId, Long quarkId);

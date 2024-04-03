@@ -1,8 +1,8 @@
-package com.ltp.contacts.service;
+package com.lluo.lisexpress.service;
 
 import java.util.List;
 
-import com.ltp.contacts.pojo.Atom;
+import com.lluo.lisexpress.pojo.Atom;
 
 public interface AtomService {
     void saveAtom(Atom atom);

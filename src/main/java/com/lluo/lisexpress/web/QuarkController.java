@@ -1,4 +1,4 @@
-package com.ltp.contacts.web;
+package com.lluo.lisexpress.web;
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ltp.contacts.pojo.Atom;
-import com.ltp.contacts.pojo.Quark;
-import com.ltp.contacts.service.QuarkService;
+import com.lluo.lisexpress.pojo.Atom;
+import com.lluo.lisexpress.pojo.Quark;
+import com.lluo.lisexpress.service.QuarkService;
 
 @RestController
 public class QuarkController {

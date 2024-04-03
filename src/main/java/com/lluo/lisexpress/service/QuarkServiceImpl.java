@@ -1,14 +1,14 @@
-package com.ltp.contacts.service;
+package com.lluo.lisexpress.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ltp.contacts.pojo.Atom;
-import com.ltp.contacts.pojo.Quark;
-import com.ltp.contacts.repository.AtomRepository;
-import com.ltp.contacts.repository.QuarkRepository;
+import com.lluo.lisexpress.pojo.Atom;
+import com.lluo.lisexpress.pojo.Quark;
+import com.lluo.lisexpress.repository.AtomRepository;
+import com.lluo.lisexpress.repository.QuarkRepository;
 
 @Service
 public class QuarkServiceImpl implements QuarkService {

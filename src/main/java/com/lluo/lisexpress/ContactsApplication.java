@@ -1,4 +1,4 @@
-package com.ltp.contacts;
+package com.lluo.lisexpress;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

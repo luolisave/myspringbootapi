@@ -1,4 +1,4 @@
-package com.ltp.contacts.pojo;
+package com.lluo.lisexpress.pojo;
 
 import java.util.UUID;
 

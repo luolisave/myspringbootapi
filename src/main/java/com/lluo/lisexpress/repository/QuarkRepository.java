@@ -1,11 +1,11 @@
-package com.ltp.contacts.repository;
+package com.lluo.lisexpress.repository;
 
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.ltp.contacts.pojo.Quark;
+import com.lluo.lisexpress.pojo.Quark;
 
 @Repository
 public interface QuarkRepository extends CrudRepository<Quark, Long> {
