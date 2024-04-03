@@ -1,8 +1,8 @@
-package com.lluo.lisexpress.service;
+package ca.lluo.lisexpress.service;
 
 import java.util.List;
 
-import com.lluo.lisexpress.pojo.Quark;
+import ca.lluo.lisexpress.pojo.Quark;
 
 public interface QuarkService {
     void save(Quark quark, Long atomId, Long quarkId);

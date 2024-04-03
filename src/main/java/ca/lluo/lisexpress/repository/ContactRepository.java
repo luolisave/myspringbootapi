@@ -1,11 +1,11 @@
-package com.lluo.lisexpress.repository;
+package ca.lluo.lisexpress.repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.lluo.lisexpress.pojo.Contact;
+import ca.lluo.lisexpress.pojo.Contact;
 
 @Repository
 public class ContactRepository {

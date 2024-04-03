@@ -1,8 +1,8 @@
-package com.lluo.lisexpress.service;
+package ca.lluo.lisexpress.service;
 
 import java.util.List;
 
-import com.lluo.lisexpress.pojo.Contact;
+import ca.lluo.lisexpress.pojo.Contact;
 
 public interface ContactService {
     Contact getContactById(String id);

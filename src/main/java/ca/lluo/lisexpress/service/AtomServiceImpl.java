@@ -1,4 +1,4 @@
-package com.lluo.lisexpress.service;
+package ca.lluo.lisexpress.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +8,10 @@ import java.util.stream.IntStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.lluo.lisexpress.pojo.Atom;
-import com.lluo.lisexpress.pojo.Contact;
-import com.lluo.lisexpress.repository.AtomRepository;
-import com.lluo.lisexpress.repository.OldAtomRepository;
+import ca.lluo.lisexpress.pojo.Atom;
+import ca.lluo.lisexpress.pojo.Contact;
+import ca.lluo.lisexpress.repository.AtomRepository;
+import ca.lluo.lisexpress.repository.OldAtomRepository;
 
 @Service
 public class AtomServiceImpl implements AtomService {

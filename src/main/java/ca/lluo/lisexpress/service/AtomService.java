@@ -1,8 +1,8 @@
-package com.lluo.lisexpress.service;
+package ca.lluo.lisexpress.service;
 
 import java.util.List;
 
-import com.lluo.lisexpress.pojo.Atom;
+import ca.lluo.lisexpress.pojo.Atom;
 
 public interface AtomService {
     void saveAtom(Atom atom);

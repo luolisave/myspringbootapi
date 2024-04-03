@@ -1,4 +1,4 @@
-package com.lluo.lisexpress.web;
+package ca.lluo.lisexpress.web;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lluo.lisexpress.pojo.Contact;
-import com.lluo.lisexpress.service.ContactService;
+import ca.lluo.lisexpress.pojo.Contact;
+import ca.lluo.lisexpress.service.ContactService;
 
 @RestController
 public class ContactController {

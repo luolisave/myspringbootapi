@@ -1,4 +1,4 @@
-package com.lluo.lisexpress.pojo;
+package ca.lluo.lisexpress.pojo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

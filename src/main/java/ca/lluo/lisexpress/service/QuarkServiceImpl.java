@@ -1,14 +1,14 @@
-package com.lluo.lisexpress.service;
+package ca.lluo.lisexpress.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.lluo.lisexpress.pojo.Atom;
-import com.lluo.lisexpress.pojo.Quark;
-import com.lluo.lisexpress.repository.AtomRepository;
-import com.lluo.lisexpress.repository.QuarkRepository;
+import ca.lluo.lisexpress.pojo.Atom;
+import ca.lluo.lisexpress.pojo.Quark;
+import ca.lluo.lisexpress.repository.AtomRepository;
+import ca.lluo.lisexpress.repository.QuarkRepository;
 
 @Service
 public class QuarkServiceImpl implements QuarkService {

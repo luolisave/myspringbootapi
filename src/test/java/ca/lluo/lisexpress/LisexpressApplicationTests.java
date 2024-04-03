@@ -1,10 +1,10 @@
-package com.ltp.contacts;
+package ca.lluo.lisexpress;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ContactsApplicationTests {
+class LisexpressApplicationTests {
 
 	@Test
 	void contextLoads() {
