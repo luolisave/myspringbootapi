@@ -8,6 +8,7 @@ import java.util.stream.IntStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ca.lluo.lisexpress.exception.ItemNotFoundException;
 import ca.lluo.lisexpress.pojo.Atom;
 import ca.lluo.lisexpress.pojo.Contact;
 import ca.lluo.lisexpress.repository.AtomRepository;
@@ -29,7 +30,13 @@ public class AtomServiceImpl implements AtomService {
 
     @Override
     public Atom getAtomById(Long id) {
-        return this.atomRepository.findById(id).get();
+        Optional<Atom> atom = atomRepository.findById(id);
+        if (atom.isPresent()) {
+            return atom.get();
+        } else {
+            throw new ItemNotFoundException(id);
+        }
+        // return this.atomRepository.findById(id).get();
     }
 
     @Override

@@ -1,10 +1,12 @@
 package ca.lluo.lisexpress.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ca.lluo.lisexpress.exception.ItemNotFoundException;
 import ca.lluo.lisexpress.pojo.Atom;
 import ca.lluo.lisexpress.pojo.Quark;
 import ca.lluo.lisexpress.repository.AtomRepository;
@@ -33,7 +35,13 @@ public class QuarkServiceImpl implements QuarkService {
 
     @Override
     public Quark getByAtomId(Long id) {
-        return this.quarkRepository.findByAtomId(id);
+        Optional<Quark> quark = quarkRepository.findByAtomId(id);
+        if (quark.isPresent()) {
+            return quark.get();
+        } else {
+            throw new ItemNotFoundException(id);
+        }
+        // return this.quarkRepository.findByAtomId(id);
     }
 
     @Override
