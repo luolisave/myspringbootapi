@@ -31,7 +31,7 @@ public class AtomServiceImpl implements AtomService {
     @Override
     public Atom getAtomById(Long id) {
         Optional<Atom> atom = atomRepository.findById(id);
-        if (atom.isPresent()) {
+        if (atom.isPresent()) { // Optional can allow empty and give me .isPresent() function.
             return atom.get();
         } else {
             throw new ItemNotFoundException(id);
