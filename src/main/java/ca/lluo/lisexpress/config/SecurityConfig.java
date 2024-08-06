@@ -45,10 +45,18 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/public/**").permitAll()
                         .requestMatchers("/contact/**").permitAll()
+                        .requestMatchers("/h2/**").permitAll() // !! this line is for H2, can be removed. !!
                         .anyRequest().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults())
-                .csrf(AbstractHttpConfigurer::disable);
+                .csrf(AbstractHttpConfigurer::disable)
+                .headers(headers -> headers   // !! this block is for H2, can be removed. !!
+                        .defaultsDisabled() // Disable default security headers
+                        .addHeaderWriter((request, response) -> {
+                            response.setHeader("Content-Security-Policy", "frame-ancestors 'self'"); // Custom CSP header
+                        })
+                );
+
         return http.build();
 
     }
