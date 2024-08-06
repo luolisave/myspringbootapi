@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,6 +35,7 @@ public class ContactController {
         return new ResponseEntity<>(contact, HttpStatus.OK);
     }
 
+    @PreAuthorize("hasAuthority('ROLE_USER')")
     @PostMapping("/contact")
     public ResponseEntity<HttpStatus> createContact(@RequestBody Contact contact) {
         contactService.saveContact(contact);
@@ -46,6 +48,7 @@ public class ContactController {
         return new ResponseEntity<Contact>(contactService.getContactById(id), HttpStatus.OK);
     }
 
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @DeleteMapping("/contact/{id}")
     public ResponseEntity<HttpStatus> deleteContact(@PathVariable String id) {
         contactService.deleteContact(id);
