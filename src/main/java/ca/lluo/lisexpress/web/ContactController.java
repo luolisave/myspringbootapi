@@ -42,6 +42,7 @@ public class ContactController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
+    @PreAuthorize("hasAuthority('ROLE_USER')")
     @PutMapping("/contact/{id}")
     public ResponseEntity<Contact> updateContact(@PathVariable String id, @RequestBody Contact contact) {
         contactService.updateContact(id, contact);
