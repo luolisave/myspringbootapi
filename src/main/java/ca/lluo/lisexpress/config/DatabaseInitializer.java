@@ -26,7 +26,6 @@ public class DatabaseInitializer {
             userRepository.save(new User(1L,"admin","admin1234", true, adminSet));
 
             Set<String> userSet = new HashSet<>();
-            userSet.add("ADMIN");
             userSet.add("USER");
             userRepository.save(new User(2L,"user","user1234", true, userSet));
         };
