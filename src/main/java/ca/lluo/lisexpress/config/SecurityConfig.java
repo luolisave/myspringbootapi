@@ -21,21 +21,28 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
     // User Creation
     @Bean
-    public UserDetailsService userDetailsService(PasswordEncoder encoder) {
-
-        // InMemoryUserDetailsManager
-        UserDetails admin = User.withUsername("admin")
-                .password(encoder.encode("admin1234"))
-                .roles("ADMIN", "USER")
-                .build();
-
-        UserDetails user = User.withUsername("user")
-                .password(encoder.encode("user1234"))
-                .roles("USER")
-                .build();
-
-        return new InMemoryUserDetailsManager(admin, user);
+    public UserDetailsService userDetailsService() {
+        System.out.println("--------------> userDetailsService()  ---------->  CustomUserDetailsService()  ----");
+        return new CustomUserDetailsService();
     }
+//    @Bean
+//    public UserDetailsService userDetailsService(PasswordEncoder encoder) {
+//
+//        System.out.println("--------------> userDetailsService()");
+//
+//        // InMemoryUserDetailsManager
+//        UserDetails admin = User.withUsername("admin")
+//                .password(encoder.encode("admin1234"))
+//                .roles("ADMIN", "USER")
+//                .build();
+//
+//        UserDetails user = User.withUsername("user")
+//                .password(encoder.encode("user1234"))
+//                .roles("USER")
+//                .build();
+//
+//        return new InMemoryUserDetailsManager(admin, user);
+//    }
 
     // Configuring HttpSecurity
     @Bean
